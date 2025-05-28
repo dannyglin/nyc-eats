@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Restaurant Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SpontaniEats</h1>
+            <p class="subtitle">Let us find you a random restaurant in NYC</p>
+        </header>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="borough">Borough</label>
+                <select id="borough">
+                    <option value="">Any Borough</option>
+                    <option value="manhattan">Manhattan</option>
+                    <option value="brooklyn">Brooklyn</option>
+                    <option value="queens">Queens</option>
+                    <option value="bronx">Bronx</option>
+                    <option value="staten_island">Staten Island</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="cuisine">Cuisine</label>
+                <select id="cuisine">
+                    <option value="">Any Cuisine</option>
+                    <option value="italian">Italian</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="american">American</option>
+                    <option value="indian">Indian</option>
+                    <option value="thai">Thai</option>
+                    <option value="vietnamese">Vietnamese</option>
+                    <option value="korean">Korean</option>
+                    <option value="mediterranean">Mediterranean</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="price">Price Range</label>
+                <select id="price">
+                    <option value="">Any Price</option>
+                    <option value="1">$</option>
+                    <option value="2">$$</option>
+                    <option value="3">$$$</option>
+                    <option value="4">$$$$</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="suggestButton" class="suggest-button">Suggest a Restaurant</button>
+
+        <div id="result" class="result">
+            <div class="restaurant-info">
+                <div class="restaurant-image" id="restaurantImage"></div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name" id="restaurantName"></h2>
+                    <p class="restaurant-address" id="restaurantDetails"></p>
+                    <div class="restaurant-rating">
+                        <span id="restaurantRating"></span>
+                    </div>
+                    <a id="yelpLink" class="map-link" href="#" target="_blank">View on Google Maps</a>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
