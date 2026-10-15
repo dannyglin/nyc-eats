@@ -1,0 +1,1422 @@
+[
+  {
+    "id": "katz-s-delicatessen",
+    "name": "Katz's Delicatessen",
+    "cuisine": "Jewish Deli",
+    "borough": "Manhattan",
+    "neighborhood": "Lower East Side",
+    "price": 2,
+    "address": "205 E Houston St",
+    "note": "Pastrami on rye, cut by hand since 1888."
+  },
+  {
+    "id": "russ-and-daughters-cafe",
+    "name": "Russ & Daughters Cafe",
+    "cuisine": "Jewish Deli",
+    "borough": "Manhattan",
+    "neighborhood": "Lower East Side",
+    "price": 3,
+    "address": "127 Orchard St",
+    "note": "Sit-down home of the century-old appetizing shop. Get the smoked fish board."
+  },
+  {
+    "id": "joe-s-pizza",
+    "name": "Joe's Pizza",
+    "cuisine": "Pizza",
+    "borough": "Manhattan",
+    "neighborhood": "Greenwich Village",
+    "price": 1,
+    "address": "7 Carmine St",
+    "note": "The textbook New York slice. Fold it and eat it standing up."
+  },
+  {
+    "id": "prince-street-pizza",
+    "name": "Prince Street Pizza",
+    "cuisine": "Pizza",
+    "borough": "Manhattan",
+    "neighborhood": "Nolita",
+    "price": 1,
+    "address": "27 Prince St",
+    "note": "Square pepperoni slices with crispy little cups of pepperoni."
+  },
+  {
+    "id": "lombardi-s",
+    "name": "Lombardi's",
+    "cuisine": "Pizza",
+    "borough": "Manhattan",
+    "neighborhood": "Nolita",
+    "price": 2,
+    "address": "32 Spring St",
+    "note": "Coal-oven pies at what is often called America's first pizzeria."
+  },
+  {
+    "id": "john-s-of-bleecker-street",
+    "name": "John's of Bleecker Street",
+    "cuisine": "Pizza",
+    "borough": "Manhattan",
+    "neighborhood": "Greenwich Village",
+    "price": 2,
+    "address": "278 Bleecker St",
+    "note": "Whole pies only, from a coal oven, in carved-up wooden booths."
+  },
+  {
+    "id": "xi-an-famous-foods",
+    "name": "Xi'an Famous Foods",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 1,
+    "address": "81 St Marks Pl",
+    "note": "Hand-ripped noodles with spicy cumin lamb."
+  },
+  {
+    "id": "nom-wah-tea-parlor",
+    "name": "Nom Wah Tea Parlor",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 2,
+    "address": "13 Doyers St",
+    "note": "Dim sum on the bend of Doyers Street since 1920."
+  },
+  {
+    "id": "joe-s-shanghai",
+    "name": "Joe's Shanghai",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 2,
+    "address": "46 Bowery",
+    "note": "Soup dumplings by the steamer basket."
+  },
+  {
+    "id": "wo-hop",
+    "name": "Wo Hop",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 1,
+    "address": "17 Mott St",
+    "note": "Late-night Cantonese-American comfort food down a flight of stairs."
+  },
+  {
+    "id": "great-ny-noodletown",
+    "name": "Great NY Noodletown",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 1,
+    "address": "28 Bowery",
+    "note": "Roast meats over rice and wonton noodle soup until late."
+  },
+  {
+    "id": "ippudo",
+    "name": "Ippudo",
+    "cuisine": "Japanese",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "65 4th Ave",
+    "note": "Rich tonkotsu ramen and pork buns."
+  },
+  {
+    "id": "raku",
+    "name": "Raku",
+    "cuisine": "Japanese",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "342 E 6th St",
+    "note": "Thick, chewy udon in deep dashi broth."
+  },
+  {
+    "id": "sushi-nakazawa",
+    "name": "Sushi Nakazawa",
+    "cuisine": "Japanese",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 4,
+    "address": "23 Commerce St",
+    "note": "A splurge-worthy omakase counter."
+  },
+  {
+    "id": "mamoun-s-falafel",
+    "name": "Mamoun's Falafel",
+    "cuisine": "Middle Eastern",
+    "borough": "Manhattan",
+    "neighborhood": "Greenwich Village",
+    "price": 1,
+    "address": "119 MacDougal St",
+    "note": "Falafel sandwiches since 1971. Cheap, fast and open late."
+  },
+  {
+    "id": "balthazar",
+    "name": "Balthazar",
+    "cuisine": "French",
+    "borough": "Manhattan",
+    "neighborhood": "SoHo",
+    "price": 3,
+    "address": "80 Spring St",
+    "note": "The classic Parisian-style brasserie. Great for brunch."
+  },
+  {
+    "id": "le-bernardin",
+    "name": "Le Bernardin",
+    "cuisine": "Seafood",
+    "borough": "Manhattan",
+    "neighborhood": "Midtown",
+    "price": 4,
+    "address": "155 W 51st St",
+    "note": "Eric Ripert's temple to seafood."
+  },
+  {
+    "id": "buvette",
+    "name": "Buvette",
+    "cuisine": "French",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 2,
+    "address": "42 Grove St",
+    "note": "A tiny candlelit wine bar with steamed eggs and tartines."
+  },
+  {
+    "id": "pastis",
+    "name": "Pastis",
+    "cuisine": "French",
+    "borough": "Manhattan",
+    "neighborhood": "Meatpacking District",
+    "price": 3,
+    "address": "52 Gansevoort St",
+    "note": "Buzzy bistro with steak frites and a zinc bar."
+  },
+  {
+    "id": "le-coucou",
+    "name": "Le Coucou",
+    "cuisine": "French",
+    "borough": "Manhattan",
+    "neighborhood": "SoHo",
+    "price": 4,
+    "address": "138 Lafayette St",
+    "note": "Grand, romantic French dining room."
+  },
+  {
+    "id": "via-carota",
+    "name": "Via Carota",
+    "cuisine": "Italian",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 3,
+    "address": "51 Grove St",
+    "note": "Rustic Italian with a famous cacio e pepe and a long wait."
+  },
+  {
+    "id": "l-artusi",
+    "name": "L'Artusi",
+    "cuisine": "Italian",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 3,
+    "address": "228 W 10th St",
+    "note": "Handmade pasta and a lively bar."
+  },
+  {
+    "id": "don-angie",
+    "name": "Don Angie",
+    "cuisine": "Italian",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 3,
+    "address": "103 Greenwich Ave",
+    "note": "Italian-American with the pinwheel lasagna for two."
+  },
+  {
+    "id": "carbone",
+    "name": "Carbone",
+    "cuisine": "Italian",
+    "borough": "Manhattan",
+    "neighborhood": "Greenwich Village",
+    "price": 4,
+    "address": "181 Thompson St",
+    "note": "Red-sauce theater and spicy rigatoni vodka."
+  },
+  {
+    "id": "rubirosa",
+    "name": "Rubirosa",
+    "cuisine": "Italian",
+    "borough": "Manhattan",
+    "neighborhood": "Nolita",
+    "price": 2,
+    "address": "235 Mulberry St",
+    "note": "Thin, crisp tie-dye pizza and pasta."
+  },
+  {
+    "id": "lilia",
+    "name": "Lilia",
+    "cuisine": "Italian",
+    "borough": "Brooklyn",
+    "neighborhood": "Williamsburg",
+    "price": 3,
+    "address": "567 Union Ave",
+    "note": "Missy Robbins' pasta in a converted auto body shop."
+  },
+  {
+    "id": "carmine-s",
+    "name": "Carmine's",
+    "cuisine": "Italian",
+    "borough": "Manhattan",
+    "neighborhood": "Theater District",
+    "price": 2,
+    "address": "200 W 44th St",
+    "note": "Family-style platters before a Broadway show."
+  },
+  {
+    "id": "gramercy-tavern",
+    "name": "Gramercy Tavern",
+    "cuisine": "American",
+    "borough": "Manhattan",
+    "neighborhood": "Flatiron",
+    "price": 4,
+    "address": "42 E 20th St",
+    "note": "A New York essential. The front tavern takes walk-ins."
+  },
+  {
+    "id": "eleven-madison-park",
+    "name": "Eleven Madison Park",
+    "cuisine": "American",
+    "borough": "Manhattan",
+    "neighborhood": "Flatiron",
+    "price": 4,
+    "address": "11 Madison Ave",
+    "note": "The famous tasting menu, now plant-based."
+  },
+  {
+    "id": "shake-shack-madison-square-park",
+    "name": "Shake Shack Madison Square Park",
+    "cuisine": "Burgers",
+    "borough": "Manhattan",
+    "neighborhood": "Flatiron",
+    "price": 1,
+    "address": "Madison Ave & E 23rd St",
+    "note": "The original Shake Shack kiosk in the park."
+  },
+  {
+    "id": "minetta-tavern",
+    "name": "Minetta Tavern",
+    "cuisine": "American",
+    "borough": "Manhattan",
+    "neighborhood": "Greenwich Village",
+    "price": 4,
+    "address": "113 MacDougal St",
+    "note": "The Black Label burger in an old-school tavern."
+  },
+  {
+    "id": "j-g-melon",
+    "name": "J.G. Melon",
+    "cuisine": "Burgers",
+    "borough": "Manhattan",
+    "neighborhood": "Upper East Side",
+    "price": 2,
+    "address": "1291 3rd Ave",
+    "note": "Burgers and cottage fries in a cozy pub."
+  },
+  {
+    "id": "corner-bistro",
+    "name": "Corner Bistro",
+    "cuisine": "Burgers",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 1,
+    "address": "331 W 4th St",
+    "note": "Cheap, juicy burgers served on paper plates."
+  },
+  {
+    "id": "clinton-st-baking-company",
+    "name": "Clinton St. Baking Company",
+    "cuisine": "Brunch",
+    "borough": "Manhattan",
+    "neighborhood": "Lower East Side",
+    "price": 2,
+    "address": "4 Clinton St",
+    "note": "Blueberry pancakes worth the line."
+  },
+  {
+    "id": "sylvia-s",
+    "name": "Sylvia's",
+    "cuisine": "Soul Food",
+    "borough": "Manhattan",
+    "neighborhood": "Harlem",
+    "price": 2,
+    "address": "328 Malcolm X Blvd",
+    "note": "The Queen of Soul Food's Harlem landmark."
+  },
+  {
+    "id": "red-rooster",
+    "name": "Red Rooster",
+    "cuisine": "Soul Food",
+    "borough": "Manhattan",
+    "neighborhood": "Harlem",
+    "price": 3,
+    "address": "310 Lenox Ave",
+    "note": "Marcus Samuelsson's take on Harlem comfort food."
+  },
+  {
+    "id": "amy-ruth-s",
+    "name": "Amy Ruth's",
+    "cuisine": "Soul Food",
+    "borough": "Manhattan",
+    "neighborhood": "Harlem",
+    "price": 2,
+    "address": "113 W 116th St",
+    "note": "Chicken and waffles named after famous Harlemites."
+  },
+  {
+    "id": "peter-luger-steak-house",
+    "name": "Peter Luger Steak House",
+    "cuisine": "Steakhouse",
+    "borough": "Brooklyn",
+    "neighborhood": "Williamsburg",
+    "price": 4,
+    "address": "178 Broadway",
+    "note": "Porterhouse for two since 1887. Bring cash or a debit card."
+  },
+  {
+    "id": "keens-steakhouse",
+    "name": "Keens Steakhouse",
+    "cuisine": "Steakhouse",
+    "borough": "Manhattan",
+    "neighborhood": "Midtown",
+    "price": 4,
+    "address": "72 W 36th St",
+    "note": "The mutton chop and thousands of clay pipes on the ceiling."
+  },
+  {
+    "id": "gallagher-s-steakhouse",
+    "name": "Gallagher's Steakhouse",
+    "cuisine": "Steakhouse",
+    "borough": "Manhattan",
+    "neighborhood": "Theater District",
+    "price": 4,
+    "address": "228 W 52nd St",
+    "note": "The meat locker in the window has been dry-aging steaks since 1927."
+  },
+  {
+    "id": "los-tacos-no-1",
+    "name": "Los Tacos No. 1",
+    "cuisine": "Mexican",
+    "borough": "Manhattan",
+    "neighborhood": "Chelsea",
+    "price": 1,
+    "address": "75 9th Ave",
+    "note": "Adobada tacos inside Chelsea Market."
+  },
+  {
+    "id": "los-mariscos",
+    "name": "Los Mariscos",
+    "cuisine": "Mexican",
+    "borough": "Manhattan",
+    "neighborhood": "Chelsea",
+    "price": 2,
+    "address": "409 W 15th St",
+    "note": "Baja-style fish tacos and ceviche."
+  },
+  {
+    "id": "cosme",
+    "name": "Cosme",
+    "cuisine": "Mexican",
+    "borough": "Manhattan",
+    "neighborhood": "Flatiron",
+    "price": 4,
+    "address": "35 E 21st St",
+    "note": "Enrique Olvera's modern Mexican and the duck carnitas."
+  },
+  {
+    "id": "superiority-burger",
+    "name": "Superiority Burger",
+    "cuisine": "Vegetarian",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "119 Avenue A",
+    "note": "Inventive vegetarian diner food."
+  },
+  {
+    "id": "veselka",
+    "name": "Veselka",
+    "cuisine": "Ukrainian",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "144 2nd Ave",
+    "note": "Pierogi and borscht around the clock."
+  },
+  {
+    "id": "momofuku-noodle-bar",
+    "name": "Momofuku Noodle Bar",
+    "cuisine": "Asian Fusion",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "171 1st Ave",
+    "note": "The bar that started David Chang's empire."
+  },
+  {
+    "id": "dirt-candy",
+    "name": "Dirt Candy",
+    "cuisine": "Vegetarian",
+    "borough": "Manhattan",
+    "neighborhood": "Lower East Side",
+    "price": 3,
+    "address": "86 Allen St",
+    "note": "Vegetables treated like the main event."
+  },
+  {
+    "id": "ess-a-bagel",
+    "name": "Ess-a-Bagel",
+    "cuisine": "Bagels",
+    "borough": "Manhattan",
+    "neighborhood": "Midtown East",
+    "price": 1,
+    "address": "831 3rd Ave",
+    "note": "Big, chewy bagels with every schmear."
+  },
+  {
+    "id": "absolute-bagels",
+    "name": "Absolute Bagels",
+    "cuisine": "Bagels",
+    "borough": "Manhattan",
+    "neighborhood": "Upper West Side",
+    "price": 1,
+    "address": "2788 Broadway",
+    "note": "Hot bagels near Columbia that are worth the line."
+  },
+  {
+    "id": "levain-bakery",
+    "name": "Levain Bakery",
+    "cuisine": "Bakery",
+    "borough": "Manhattan",
+    "neighborhood": "Upper West Side",
+    "price": 1,
+    "address": "167 W 74th St",
+    "note": "Six-ounce chocolate chip walnut cookies."
+  },
+  {
+    "id": "hanjan",
+    "name": "Hanjan",
+    "cuisine": "Korean",
+    "borough": "Manhattan",
+    "neighborhood": "Flatiron",
+    "price": 3,
+    "address": "36 W 26th St",
+    "note": "A Korean gastropub with skewers and seafood pancakes."
+  },
+  {
+    "id": "her-name-is-han",
+    "name": "Her Name Is Han",
+    "cuisine": "Korean",
+    "borough": "Manhattan",
+    "neighborhood": "Koreatown",
+    "price": 2,
+    "address": "17 E 31st St",
+    "note": "Homestyle Korean dishes in a cozy room."
+  },
+  {
+    "id": "jongro-bbq",
+    "name": "Jongro BBQ",
+    "cuisine": "Korean",
+    "borough": "Manhattan",
+    "neighborhood": "Koreatown",
+    "price": 3,
+    "address": "22 W 32nd St",
+    "note": "Korean barbecue with a cook at your table."
+  },
+  {
+    "id": "cote",
+    "name": "Cote",
+    "cuisine": "Korean",
+    "borough": "Manhattan",
+    "neighborhood": "Flatiron",
+    "price": 4,
+    "address": "16 W 22nd St",
+    "note": "A Korean steakhouse with the Butcher's Feast."
+  },
+  {
+    "id": "atoboy",
+    "name": "Atoboy",
+    "cuisine": "Korean",
+    "borough": "Manhattan",
+    "neighborhood": "NoMad",
+    "price": 3,
+    "address": "43 E 28th St",
+    "note": "Modern Korean small plates."
+  },
+  {
+    "id": "ugly-baby",
+    "name": "Ugly Baby",
+    "cuisine": "Thai",
+    "borough": "Brooklyn",
+    "neighborhood": "Carroll Gardens",
+    "price": 2,
+    "address": "407 Smith St",
+    "note": "Seriously spicy regional Thai."
+  },
+  {
+    "id": "wondee-siam",
+    "name": "Wondee Siam",
+    "cuisine": "Thai",
+    "borough": "Manhattan",
+    "neighborhood": "Hell's Kitchen",
+    "price": 1,
+    "address": "792 9th Ave",
+    "note": "A cheap and reliable Hell's Kitchen favorite."
+  },
+  {
+    "id": "pure-thai-cookhouse",
+    "name": "Pure Thai Cookhouse",
+    "cuisine": "Thai",
+    "borough": "Manhattan",
+    "neighborhood": "Hell's Kitchen",
+    "price": 2,
+    "address": "766 9th Ave",
+    "note": "Ratchaburi crab and pork dry noodles."
+  },
+  {
+    "id": "dhamaka",
+    "name": "Dhamaka",
+    "cuisine": "Indian",
+    "borough": "Manhattan",
+    "neighborhood": "Lower East Side",
+    "price": 3,
+    "address": "119 Delancey St",
+    "note": "Unapologetic regional Indian cooking in Essex Market."
+  },
+  {
+    "id": "adda",
+    "name": "Adda",
+    "cuisine": "Indian",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 3,
+    "address": "107 1st Ave",
+    "note": "Bold Indian canteen food."
+  },
+  {
+    "id": "semma",
+    "name": "Semma",
+    "cuisine": "Indian",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 3,
+    "address": "60 Greenwich Ave",
+    "note": "South Indian cooking with real heat."
+  },
+  {
+    "id": "indian-accent",
+    "name": "Indian Accent",
+    "cuisine": "Indian",
+    "borough": "Manhattan",
+    "neighborhood": "Midtown",
+    "price": 4,
+    "address": "123 W 56th St",
+    "note": "Inventive modern Indian tasting menus."
+  },
+  {
+    "id": "zabb-elee",
+    "name": "Zabb Elee",
+    "cuisine": "Thai",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "75 2nd Ave",
+    "note": "Isan Thai with fiery larb and som tum."
+  },
+  {
+    "id": "cafe-mogador",
+    "name": "Cafe Mogador",
+    "cuisine": "Moroccan",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "101 St Marks Pl",
+    "note": "Tagines and a great brunch."
+  },
+  {
+    "id": "taim",
+    "name": "Taim",
+    "cuisine": "Middle Eastern",
+    "borough": "Manhattan",
+    "neighborhood": "West Village",
+    "price": 1,
+    "address": "222 Waverly Pl",
+    "note": "Green falafel and sabich."
+  },
+  {
+    "id": "ras-plant-based",
+    "name": "Ras Plant Based",
+    "cuisine": "Ethiopian",
+    "borough": "Brooklyn",
+    "neighborhood": "Crown Heights",
+    "price": 2,
+    "address": "739 Franklin Ave",
+    "note": "Vegan Ethiopian combo platters."
+  },
+  {
+    "id": "awash",
+    "name": "Awash",
+    "cuisine": "Ethiopian",
+    "borough": "Manhattan",
+    "neighborhood": "East Village",
+    "price": 2,
+    "address": "338 E 6th St",
+    "note": "Injera platters for sharing."
+  },
+  {
+    "id": "tatiana",
+    "name": "Tatiana",
+    "cuisine": "Caribbean",
+    "borough": "Manhattan",
+    "neighborhood": "Upper West Side",
+    "price": 3,
+    "address": "10 Lincoln Center Plaza",
+    "note": "Kwame Onwuachi's celebration of Afro-Caribbean New York."
+  },
+  {
+    "id": "golden-unicorn",
+    "name": "Golden Unicorn",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 2,
+    "address": "18 E Broadway",
+    "note": "Cart-service dim sum across a giant banquet hall."
+  },
+  {
+    "id": "peking-duck-house",
+    "name": "Peking Duck House",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 3,
+    "address": "28 Mott St",
+    "note": "Duck carved tableside."
+  },
+  {
+    "id": "spicy-village",
+    "name": "Spicy Village",
+    "cuisine": "Chinese",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 1,
+    "address": "68 Forsyth St",
+    "note": "Big tray chicken and hand-pulled noodles."
+  },
+  {
+    "id": "mei-lai-wah",
+    "name": "Mei Lai Wah",
+    "cuisine": "Bakery",
+    "borough": "Manhattan",
+    "neighborhood": "Chinatown",
+    "price": 1,
+    "address": "64 Bayard St",
+    "note": "Roast pork buns, fresh from the oven."
+  },
+  {
+    "id": "dominique-ansel-bakery",
+    "name": "Dominique Ansel Bakery",
+    "cuisine": "Bakery",
+    "borough": "Manhattan",
+    "neighborhood": "SoHo",
+    "price": 2,
+    "address": "189 Spring St",
+    "note": "The bakery that invented the Cronut."
+  },
+  {
+    "id": "ferrara-bakery",
+    "name": "Ferrara Bakery",
+    "cuisine": "Bakery",
+    "borough": "Manhattan",
+    "neighborhood": "Little Italy",
+    "price": 2,
+    "address": "195 Grand St",
+    "note": "Cannoli in Little Italy since 1892."
+  },
+  {
+    "id": "di-fara-pizza",
+    "name": "Di Fara Pizza",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Midwood",
+    "price": 2,
+    "address": "1424 Avenue J",
+    "note": "A legendary Brooklyn pie."
+  },
+  {
+    "id": "landb-spumoni-gardens",
+    "name": "L&B Spumoni Gardens",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Gravesend",
+    "price": 1,
+    "address": "2725 86th St",
+    "note": "Sicilian squares with the sauce on top, then spumoni."
+  },
+  {
+    "id": "lucali",
+    "name": "Lucali",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Carroll Gardens",
+    "price": 2,
+    "address": "575 Henry St",
+    "note": "Candlelit, BYOB, and the pies are worth the wait."
+  },
+  {
+    "id": "roberta-s",
+    "name": "Roberta's",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Bushwick",
+    "price": 2,
+    "address": "261 Moore St",
+    "note": "Wood-fired pies that helped define Bushwick."
+  },
+  {
+    "id": "paulie-gee-s",
+    "name": "Paulie Gee's",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Greenpoint",
+    "price": 2,
+    "address": "60 Greenpoint Ave",
+    "note": "Creative pies, including the Hellboy with hot honey."
+  },
+  {
+    "id": "l-industrie-pizzeria",
+    "name": "L'industrie Pizzeria",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Williamsburg",
+    "price": 1,
+    "address": "254 S 2nd St",
+    "note": "Burrata slices with a cult following."
+  },
+  {
+    "id": "juliana-s",
+    "name": "Juliana's",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "DUMBO",
+    "price": 2,
+    "address": "19 Old Fulton St",
+    "note": "Coal-oven pies under the Brooklyn Bridge."
+  },
+  {
+    "id": "grimaldi-s",
+    "name": "Grimaldi's",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "DUMBO",
+    "price": 2,
+    "address": "1 Front St",
+    "note": "The other famous coal-oven pizzeria by the bridge."
+  },
+  {
+    "id": "totonno-s",
+    "name": "Totonno's",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Coney Island",
+    "price": 2,
+    "address": "1524 Neptune Ave",
+    "note": "Coney Island coal-oven pies since 1924."
+  },
+  {
+    "id": "nathan-s-famous",
+    "name": "Nathan's Famous",
+    "cuisine": "Hot Dogs",
+    "borough": "Brooklyn",
+    "neighborhood": "Coney Island",
+    "price": 1,
+    "address": "1310 Surf Ave",
+    "note": "The original Coney Island hot dog stand."
+  },
+  {
+    "id": "junior-s",
+    "name": "Junior's",
+    "cuisine": "Diner",
+    "borough": "Brooklyn",
+    "neighborhood": "Downtown Brooklyn",
+    "price": 2,
+    "address": "386 Flatbush Ave Ext",
+    "note": "Cheesecake and diner classics."
+  },
+  {
+    "id": "gage-and-tollner",
+    "name": "Gage & Tollner",
+    "cuisine": "American",
+    "borough": "Brooklyn",
+    "neighborhood": "Downtown Brooklyn",
+    "price": 3,
+    "address": "372 Fulton St",
+    "note": "A restored 1879 oyster and chop house."
+  },
+  {
+    "id": "olmsted",
+    "name": "Olmsted",
+    "cuisine": "American",
+    "borough": "Brooklyn",
+    "neighborhood": "Prospect Heights",
+    "price": 3,
+    "address": "659 Vanderbilt Ave",
+    "note": "Garden-to-table cooking with a backyard."
+  },
+  {
+    "id": "win-son",
+    "name": "Win Son",
+    "cuisine": "Taiwanese",
+    "borough": "Brooklyn",
+    "neighborhood": "East Williamsburg",
+    "price": 2,
+    "address": "159 Graham Ave",
+    "note": "Taiwanese-American cooking. Try the scallion pancake."
+  },
+  {
+    "id": "sunday-in-brooklyn",
+    "name": "Sunday in Brooklyn",
+    "cuisine": "Brunch",
+    "borough": "Brooklyn",
+    "neighborhood": "Williamsburg",
+    "price": 2,
+    "address": "348 Wythe Ave",
+    "note": "Malted pancakes with hazelnut-maple syrup."
+  },
+  {
+    "id": "llama-inn",
+    "name": "Llama Inn",
+    "cuisine": "Peruvian",
+    "borough": "Brooklyn",
+    "neighborhood": "Williamsburg",
+    "price": 3,
+    "address": "50 Withers St",
+    "note": "Modern Peruvian with a rooftop."
+  },
+  {
+    "id": "fausto",
+    "name": "Fausto",
+    "cuisine": "Italian",
+    "borough": "Brooklyn",
+    "neighborhood": "Park Slope",
+    "price": 3,
+    "address": "348 Flatbush Ave",
+    "note": "A neighborhood pasta spot that feels special."
+  },
+  {
+    "id": "al-di-la-trattoria",
+    "name": "Al Di La Trattoria",
+    "cuisine": "Italian",
+    "borough": "Brooklyn",
+    "neighborhood": "Park Slope",
+    "price": 2,
+    "address": "248 5th Ave",
+    "note": "Venetian trattoria and a Park Slope staple."
+  },
+  {
+    "id": "sahadi-s",
+    "name": "Sahadi's",
+    "cuisine": "Middle Eastern",
+    "borough": "Brooklyn",
+    "neighborhood": "Cobble Hill",
+    "price": 1,
+    "address": "187 Atlantic Ave",
+    "note": "A Middle Eastern market with a great prepared-foods counter."
+  },
+  {
+    "id": "bunna-cafe",
+    "name": "Bunna Cafe",
+    "cuisine": "Ethiopian",
+    "borough": "Brooklyn",
+    "neighborhood": "Bushwick",
+    "price": 2,
+    "address": "1084 Flushing Ave",
+    "note": "Vegan Ethiopian feasts."
+  },
+  {
+    "id": "peaches",
+    "name": "Peaches",
+    "cuisine": "Soul Food",
+    "borough": "Brooklyn",
+    "neighborhood": "Bedford-Stuyvesant",
+    "price": 2,
+    "address": "393 Lewis Ave",
+    "note": "Southern cooking and a great brunch."
+  },
+  {
+    "id": "emily",
+    "name": "Emily",
+    "cuisine": "Pizza",
+    "borough": "Brooklyn",
+    "neighborhood": "Clinton Hill",
+    "price": 2,
+    "address": "919 Fulton St",
+    "note": "The Emmy burger and Detroit-style pies."
+  },
+  {
+    "id": "hometown-bar-b-que",
+    "name": "Hometown Bar-B-Que",
+    "cuisine": "BBQ",
+    "borough": "Brooklyn",
+    "neighborhood": "Red Hook",
+    "price": 2,
+    "address": "454 Van Brunt St",
+    "note": "Texas-style brisket by the pound."
+  },
+  {
+    "id": "defonte-s",
+    "name": "Defonte's",
+    "cuisine": "Sandwiches",
+    "borough": "Brooklyn",
+    "neighborhood": "Red Hook",
+    "price": 1,
+    "address": "379 Columbia St",
+    "note": "Giant Italian heroes since 1922."
+  },
+  {
+    "id": "tanoreen",
+    "name": "Tanoreen",
+    "cuisine": "Middle Eastern",
+    "borough": "Brooklyn",
+    "neighborhood": "Bay Ridge",
+    "price": 2,
+    "address": "7523 3rd Ave",
+    "note": "Palestinian and Middle Eastern home cooking."
+  },
+  {
+    "id": "sripraphai",
+    "name": "Sripraphai",
+    "cuisine": "Thai",
+    "borough": "Queens",
+    "neighborhood": "Woodside",
+    "price": 2,
+    "address": "64-13 39th Ave",
+    "note": "A destination for Thai food in Queens."
+  },
+  {
+    "id": "ayada",
+    "name": "Ayada",
+    "cuisine": "Thai",
+    "borough": "Queens",
+    "neighborhood": "Elmhurst",
+    "price": 2,
+    "address": "77-08 Woodside Ave",
+    "note": "Fiery Thai and a crispy morning glory salad."
+  },
+  {
+    "id": "zaab-zaab",
+    "name": "Zaab Zaab",
+    "cuisine": "Thai",
+    "borough": "Queens",
+    "neighborhood": "Elmhurst",
+    "price": 2,
+    "address": "76-21 Woodside Ave",
+    "note": "Isan Thai with funky, sour salads."
+  },
+  {
+    "id": "jackson-diner",
+    "name": "Jackson Diner",
+    "cuisine": "Indian",
+    "borough": "Queens",
+    "neighborhood": "Jackson Heights",
+    "price": 2,
+    "address": "37-47 74th St",
+    "note": "North Indian classics on the busy 74th Street strip."
+  },
+  {
+    "id": "phayul",
+    "name": "Phayul",
+    "cuisine": "Tibetan",
+    "borough": "Queens",
+    "neighborhood": "Jackson Heights",
+    "price": 1,
+    "address": "37-65 74th St",
+    "note": "Tibetan momos and soups up a narrow staircase."
+  },
+  {
+    "id": "arepa-lady",
+    "name": "Arepa Lady",
+    "cuisine": "Colombian",
+    "borough": "Queens",
+    "neighborhood": "Jackson Heights",
+    "price": 1,
+    "address": "77-17 37th Ave",
+    "note": "Sweet corn arepas with melted cheese."
+  },
+  {
+    "id": "pio-pio",
+    "name": "Pio Pio",
+    "cuisine": "Peruvian",
+    "borough": "Queens",
+    "neighborhood": "Jackson Heights",
+    "price": 2,
+    "address": "84-13 Northern Blvd",
+    "note": "Rotisserie chicken with green sauce."
+  },
+  {
+    "id": "taqueria-coatzingo",
+    "name": "Taqueria Coatzingo",
+    "cuisine": "Mexican",
+    "borough": "Queens",
+    "neighborhood": "Jackson Heights",
+    "price": 1,
+    "address": "76-05 Roosevelt Ave",
+    "note": "Pueblan tacos and cemitas."
+  },
+  {
+    "id": "nan-xiang-xiao-long-bao",
+    "name": "Nan Xiang Xiao Long Bao",
+    "cuisine": "Chinese",
+    "borough": "Queens",
+    "neighborhood": "Flushing",
+    "price": 2,
+    "address": "39-16 Prince St",
+    "note": "Soup dumplings that rival any in the city."
+  },
+  {
+    "id": "new-world-mall-food-court",
+    "name": "New World Mall Food Court",
+    "cuisine": "Food Hall",
+    "borough": "Queens",
+    "neighborhood": "Flushing",
+    "price": 1,
+    "address": "136-20 Roosevelt Ave",
+    "note": "A basement food court full of regional Chinese stalls."
+  },
+  {
+    "id": "golden-shopping-mall",
+    "name": "Golden Shopping Mall",
+    "cuisine": "Food Hall",
+    "borough": "Queens",
+    "neighborhood": "Flushing",
+    "price": 1,
+    "address": "41-28 Main St",
+    "note": "The original Flushing basement food court."
+  },
+  {
+    "id": "szechuan-mountain-house",
+    "name": "Szechuan Mountain House",
+    "cuisine": "Chinese",
+    "borough": "Queens",
+    "neighborhood": "Flushing",
+    "price": 2,
+    "address": "39-07 Prince St",
+    "note": "Sichuan cooking in a dramatic dining room."
+  },
+  {
+    "id": "joe-s-shanghai-flushing",
+    "name": "Joe's Shanghai Flushing",
+    "cuisine": "Chinese",
+    "borough": "Queens",
+    "neighborhood": "Flushing",
+    "price": 2,
+    "address": "136-21 37th Ave",
+    "note": "The Flushing location of the soup dumpling classic."
+  },
+  {
+    "id": "hahm-ji-bach",
+    "name": "Hahm Ji Bach",
+    "cuisine": "Korean",
+    "borough": "Queens",
+    "neighborhood": "Murray Hill",
+    "price": 2,
+    "address": "41-08 149th Pl",
+    "note": "Korean barbecue in Queens' other Koreatown."
+  },
+  {
+    "id": "taverna-kyclades",
+    "name": "Taverna Kyclades",
+    "cuisine": "Greek",
+    "borough": "Queens",
+    "neighborhood": "Astoria",
+    "price": 2,
+    "address": "33-07 Ditmars Blvd",
+    "note": "Grilled octopus and whole fish."
+  },
+  {
+    "id": "agnanti",
+    "name": "Agnanti",
+    "cuisine": "Greek",
+    "borough": "Queens",
+    "neighborhood": "Astoria",
+    "price": 2,
+    "address": "19-06 Ditmars Blvd",
+    "note": "Greek meze across from Astoria Park."
+  },
+  {
+    "id": "bahari-estiatorio",
+    "name": "Bahari Estiatorio",
+    "cuisine": "Greek",
+    "borough": "Queens",
+    "neighborhood": "Astoria",
+    "price": 2,
+    "address": "31-14 Broadway",
+    "note": "Homestyle Greek baked dishes."
+  },
+  {
+    "id": "kabab-cafe",
+    "name": "Kabab Cafe",
+    "cuisine": "Egyptian",
+    "borough": "Queens",
+    "neighborhood": "Astoria",
+    "price": 2,
+    "address": "25-12 Steinway St",
+    "note": "Chef Ali's Egyptian cooking in a tiny room."
+  },
+  {
+    "id": "bohemian-hall-and-beer-garden",
+    "name": "Bohemian Hall & Beer Garden",
+    "cuisine": "German",
+    "borough": "Queens",
+    "neighborhood": "Astoria",
+    "price": 2,
+    "address": "29-19 24th Ave",
+    "note": "The city's oldest beer garden."
+  },
+  {
+    "id": "mu-ramen",
+    "name": "Mu Ramen",
+    "cuisine": "Japanese",
+    "borough": "Queens",
+    "neighborhood": "Long Island City",
+    "price": 2,
+    "address": "12-09 Jackson Ave",
+    "note": "Rich ramen in Long Island City."
+  },
+  {
+    "id": "m-wells",
+    "name": "M. Wells",
+    "cuisine": "French",
+    "borough": "Queens",
+    "neighborhood": "Long Island City",
+    "price": 3,
+    "address": "43-15 Crescent St",
+    "note": "Quebecois cooking in a former garage."
+  },
+  {
+    "id": "casa-enrique",
+    "name": "Casa Enrique",
+    "cuisine": "Mexican",
+    "borough": "Queens",
+    "neighborhood": "Long Island City",
+    "price": 2,
+    "address": "5-48 49th Ave",
+    "note": "Chiapas-style Mexican cooking."
+  },
+  {
+    "id": "lhasa-fast-food",
+    "name": "Lhasa Fast Food",
+    "cuisine": "Tibetan",
+    "borough": "Queens",
+    "neighborhood": "Jackson Heights",
+    "price": 1,
+    "address": "37-50 74th St",
+    "note": "Momos hidden behind a cell phone shop."
+  },
+  {
+    "id": "rincon-criollo",
+    "name": "Rincon Criollo",
+    "cuisine": "Cuban",
+    "borough": "Queens",
+    "neighborhood": "Corona",
+    "price": 2,
+    "address": "40-09 Junction Blvd",
+    "note": "Cuban comfort food since 1976."
+  },
+  {
+    "id": "tortilleria-nixtamal",
+    "name": "Tortilleria Nixtamal",
+    "cuisine": "Mexican",
+    "borough": "Queens",
+    "neighborhood": "Corona",
+    "price": 1,
+    "address": "104-05 47th Ave",
+    "note": "Tacos on tortillas made from scratch."
+  },
+  {
+    "id": "lemon-ice-king-of-corona",
+    "name": "Lemon Ice King of Corona",
+    "cuisine": "Dessert",
+    "borough": "Queens",
+    "neighborhood": "Corona",
+    "price": 1,
+    "address": "52-02 108th St",
+    "note": "Italian ices since 1944."
+  },
+  {
+    "id": "leo-s-latticini-mama-s-of-corona",
+    "name": "Leo's Latticini (Mama's of Corona)",
+    "cuisine": "Sandwiches",
+    "borough": "Queens",
+    "neighborhood": "Corona",
+    "price": 1,
+    "address": "46-02 104th St",
+    "note": "Old-school Italian heroes with fresh mozzarella."
+  },
+  {
+    "id": "arthur-avenue-retail-market",
+    "name": "Arthur Avenue Retail Market",
+    "cuisine": "Food Hall",
+    "borough": "Bronx",
+    "neighborhood": "Belmont",
+    "price": 1,
+    "address": "2344 Arthur Ave",
+    "note": "The Bronx's Little Italy under one roof."
+  },
+  {
+    "id": "roberto-s",
+    "name": "Roberto's",
+    "cuisine": "Italian",
+    "borough": "Bronx",
+    "neighborhood": "Belmont",
+    "price": 3,
+    "address": "603 Crescent Ave",
+    "note": "Southern Italian with pasta cooked in foil."
+  },
+  {
+    "id": "zero-otto-nove",
+    "name": "Zero Otto Nove",
+    "cuisine": "Pizza",
+    "borough": "Bronx",
+    "neighborhood": "Belmont",
+    "price": 2,
+    "address": "2357 Arthur Ave",
+    "note": "Neapolitan pies off Arthur Avenue."
+  },
+  {
+    "id": "dominick-s",
+    "name": "Dominick's",
+    "cuisine": "Italian",
+    "borough": "Bronx",
+    "neighborhood": "Belmont",
+    "price": 2,
+    "address": "2335 Arthur Ave",
+    "note": "No menus, no checks, just family-style red sauce."
+  },
+  {
+    "id": "mike-s-deli",
+    "name": "Mike's Deli",
+    "cuisine": "Sandwiches",
+    "borough": "Bronx",
+    "neighborhood": "Belmont",
+    "price": 1,
+    "address": "2344 Arthur Ave",
+    "note": "Italian heroes inside the Arthur Avenue market."
+  },
+  {
+    "id": "madonia-brothers-bakery",
+    "name": "Madonia Brothers Bakery",
+    "cuisine": "Bakery",
+    "borough": "Bronx",
+    "neighborhood": "Belmont",
+    "price": 1,
+    "address": "2348 Arthur Ave",
+    "note": "Cannoli filled to order since 1918."
+  },
+  {
+    "id": "antonio-s-trattoria",
+    "name": "Antonio's Trattoria",
+    "cuisine": "Italian",
+    "borough": "Bronx",
+    "neighborhood": "Belmont",
+    "price": 2,
+    "address": "2370 Belmont Ave",
+    "note": "Generous red-sauce plates."
+  },
+  {
+    "id": "patricia-s",
+    "name": "Patricia's",
+    "cuisine": "Italian",
+    "borough": "Bronx",
+    "neighborhood": "Morris Park",
+    "price": 2,
+    "address": "1082 Morris Park Ave",
+    "note": "Wood-fired pizza and Italian classics."
+  },
+  {
+    "id": "denino-s-pizzeria",
+    "name": "Denino's Pizzeria",
+    "cuisine": "Pizza",
+    "borough": "Staten Island",
+    "neighborhood": "Port Richmond",
+    "price": 2,
+    "address": "524 Port Richmond Ave",
+    "note": "The garbage pie and thin bar-style crust."
+  },
+  {
+    "id": "joe-and-pat-s",
+    "name": "Joe & Pat's",
+    "cuisine": "Pizza",
+    "borough": "Staten Island",
+    "neighborhood": "Castleton Corners",
+    "price": 2,
+    "address": "1758 Victory Blvd",
+    "note": "Ultra-thin, crispy pies."
+  },
+  {
+    "id": "lee-s-tavern",
+    "name": "Lee's Tavern",
+    "cuisine": "Pizza",
+    "borough": "Staten Island",
+    "neighborhood": "Dongan Hills",
+    "price": 1,
+    "address": "60 Hancock St",
+    "note": "Bar pies in a classic Staten Island tavern."
+  },
+  {
+    "id": "enoteca-maria",
+    "name": "Enoteca Maria",
+    "cuisine": "Italian",
+    "borough": "Staten Island",
+    "neighborhood": "St. George",
+    "price": 3,
+    "address": "27 Hyatt St",
+    "note": "Grandmothers from around the world take turns in the kitchen."
+  },
+  {
+    "id": "lakruwana",
+    "name": "Lakruwana",
+    "cuisine": "Sri Lankan",
+    "borough": "Staten Island",
+    "neighborhood": "Stapleton",
+    "price": 2,
+    "address": "668 Bay St",
+    "note": "Sri Lankan rice and curry in a room full of art."
+  },
+  {
+    "id": "new-asha",
+    "name": "New Asha",
+    "cuisine": "Sri Lankan",
+    "borough": "Staten Island",
+    "neighborhood": "Tompkinsville",
+    "price": 1,
+    "address": "322 Victory Blvd",
+    "note": "Cheap, spicy Sri Lankan plates."
+  },
+  {
+    "id": "killmeyer-s-old-bavaria-inn",
+    "name": "Killmeyer's Old Bavaria Inn",
+    "cuisine": "German",
+    "borough": "Staten Island",
+    "neighborhood": "Charleston",
+    "price": 2,
+    "address": "4254 Arthur Kill Rd",
+    "note": "A German beer garden dating to 1859."
+  },
+  {
+    "id": "ralph-s-famous-italian-ices",
+    "name": "Ralph's Famous Italian Ices",
+    "cuisine": "Dessert",
+    "borough": "Staten Island",
+    "neighborhood": "Graniteville",
+    "price": 1,
+    "address": "501 Port Richmond Ave",
+    "note": "The original Ralph's ices, since 1928."
+  }
+]

@@ -1,35 +1,34 @@
 {
-  "name": "personal_website",
-  "version": "0.1.0",
+  "name": "nyc-eats",
+  "version": "2.0.0",
   "private": true,
+  "description": "Spin up a random restaurant anywhere in New York City.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npx serve out",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run test"
   },
   "dependencies": {
-    "@react-spring/three": "^9.7.2",
-    "@react-three/drei": "^9.68.6",
-    "@react-three/fiber": "^8.13.0",
-    "@types/node": "20.2.3",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
-    "@types/styled-components": "^5.1.26",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.41.0",
-    "eslint-config-next": "13.4.3",
-    "leva": "^0.9.35",
-    "next": "13.4.3",
-    "postcss": "8.4.23",
-    "react": "18.2.0",
-    "react-colorful": "^5.6.1",
-    "react-dom": "18.2.0",
-    "sharp": "^0.32.2",
-    "styled-components": "^5.3.10",
-    "tailwindcss": "3.3.2",
-    "three": "^0.152.2",
-    "typescript": "5.0.4",
-    "valtio": "^1.10.5"
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "next": "15.5.28",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

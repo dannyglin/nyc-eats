@@ -1,13 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      unoptimized: true,
-    },
-    output: 'export',
-    compiler: {
-        // Enables the styled-components SWC transform
-        styledComponents: true
-      }
+  // Static export so the site can be hosted on GitHub Pages.
+  output: 'export',
+  images: { unoptimized: true },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
