@@ -1,26 +1,34 @@
-"use client"; // This is a client component
+import { readFile } from 'fs/promises'
+import type { InferGetStaticPropsType } from 'next'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
-import React, { useRef } from 'react'
-import { Canvas } from "@react-three/fiber";
-import Background from '../app/background';
-import RestaurantFinder from '../components/RestaurantFinder';
-import { Container, SiteContainer, RestaurantContainer } from '../components/styles'
-import { GlobalStyle } from '../components/styles'
+export async function getStaticProps() {
+  const document = await readFile('index.html', 'utf8')
+  const body = document.match(/<body>([\s\S]*?)<\/body>/i)
+  const title = document.match(/<title>(.*?)<\/title>/i)
+  if (!body || !title) throw new Error('The picker needs a page title and body.')
 
-export default function App() {
+  // Next loads these scripts after hydration so they can update the picker controls.
+  const markup = body[1].replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+  return { props: { title: title[1], markup } }
+}
+
+export default function Home({ title, markup }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { basePath } = useRouter()
+  useEffect(() => {
+    require('../public/picker-data.js')
+    require('../script.js')
+  }, [])
+
   return (
     <>
-    <SiteContainer>
-      <GlobalStyle/>
-      <RestaurantContainer>
-        <Canvas style={{ position: 'absolute', top: 0, left: 0, height: "100vh", width: "100vw", pointerEvents: 'none' }} 
-            // @ts-ignore
-            camera={{ position: [0, -1.7, 3], rotation: [Math.PI/4,0,0] }}>
-        <Background/>
-        </Canvas>
-        <RestaurantFinder/>
-      </RestaurantContainer>
-      </SiteContainer>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content="Find your next NYC restaurant with a random pick across the five boroughs, or filter by borough, cuisine, and price." />
+      </Head>
+      <div dangerouslySetInnerHTML={{ __html: markup.replace(/(src|href)="(?:\.\/)?public\//g, `$1="${basePath}/`) }} />
     </>
-  );
+  )
 }

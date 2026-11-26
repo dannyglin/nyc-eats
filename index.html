@@ -1,81 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYC Restaurant Finder</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f5">
+  <meta name="description" content="Let NYC Eats pick a restaurant across the five boroughs, or narrow the draw by borough, cuisine, and price.">
+  <title>NYC Eats · Restaurant picker</title>
+  <link rel="icon" href="public/dice.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>SpontaniEats</h1>
-            <p class="subtitle">Let us find you a random restaurant in NYC</p>
-        </header>
-
-        <div class="filters">
-            <div class="filter-group">
-                <label for="borough">Borough</label>
-                <select id="borough">
-                    <option value="">Any Borough</option>
-                    <option value="manhattan">Manhattan</option>
-                    <option value="brooklyn">Brooklyn</option>
-                    <option value="queens">Queens</option>
-                    <option value="bronx">Bronx</option>
-                    <option value="staten_island">Staten Island</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label for="cuisine">Cuisine</label>
-                <select id="cuisine">
-                    <option value="">Any Cuisine</option>
-                    <option value="italian">Italian</option>
-                    <option value="chinese">Chinese</option>
-                    <option value="japanese">Japanese</option>
-                    <option value="mexican">Mexican</option>
-                    <option value="american">American</option>
-                    <option value="indian">Indian</option>
-                    <option value="thai">Thai</option>
-                    <option value="vietnamese">Vietnamese</option>
-                    <option value="korean">Korean</option>
-                    <option value="mediterranean">Mediterranean</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label for="price">Price Range</label>
-                <select id="price">
-                    <option value="">Any Price</option>
-                    <option value="1">$</option>
-                    <option value="2">$$</option>
-                    <option value="3">$$$</option>
-                    <option value="4">$$$$</option>
-                </select>
-            </div>
-        </div>
-
-        <button id="suggestButton" class="suggest-button">Suggest a Restaurant</button>
-
-        <div id="result" class="result">
-            <div class="restaurant-info">
-                <div class="restaurant-image" id="restaurantImage"></div>
-                <div class="restaurant-details">
-                    <h2 class="restaurant-name" id="restaurantName"></h2>
-                    <p class="restaurant-address" id="restaurantDetails"></p>
-                    <div class="restaurant-rating">
-                        <span id="restaurantRating"></span>
-                    </div>
-                    <a id="yelpLink" class="map-link" href="#" target="_blank">View on Google Maps</a>
-                </div>
-            </div>
-            <div id="map"></div>
-        </div>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01" stroke-width="3.4"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="sliders" viewBox="0 0 24 24"><path d="M3 7h4m5 0h9M3 17h10m5 0h3"/><circle cx="9.5" cy="7" r="2.5"/><circle cx="15.5" cy="17" r="2.5"/></symbol>
+    <symbol id="history-icon" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2.5 7M3 5v6h6m3-5v6l3.5 2"/></symbol>
+    <symbol id="reset-icon" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 7M3 4v6h6"/></symbol>
+    <symbol id="chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="utensils" viewBox="0 0 24 24"><path d="M5 3v5a3 3 0 0 0 6 0V3M8 3v18m11 0V3c-3 2-4 5-4 10h4"/></symbol>
+    <symbol id="wallet" viewBox="0 0 24 24"><path d="M20 8V6a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15v11H5a2 2 0 0 1-2-2V7"/><path d="M20 12h-4a2 2 0 1 0 0 4h4"/></symbol>
+    <symbol id="shuffle" viewBox="0 0 24 24"><path d="M3 6h2c5 0 7 12 12 12h4m-4-4 4 4-4 4M3 18h2c2.5 0 4-2.5 5.5-5m3-5C15 6 16 6 18 6h3m-4-4 4 4-4 4"/></symbol>
+    <symbol id="close-icon" viewBox="0 0 24 24"><path d="m6 6 12 12m0-12L6 18"/></symbol>
+  </svg>
+  <header class="masthead">
+    <div class="wrap topbar">
+      <a class="brand" href="#top" aria-label="NYC Eats home"><span class="brand-die"><i></i></span>NYC<span class="brand-accent">Eats</span></a>
+      <nav aria-label="Main navigation">
+        <a class="history-link" href="#recent"><svg class="icon"><use href="#history-icon"/></svg>Recent picks</a>
+        <span class="city"><svg class="icon"><use href="#pin"/></svg>New York City</span>
+      </nav>
     </div>
+  </header>
+  <main class="wrap" id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="kicker"><span class="kicker-line"></span>Restaurant roulette</div>
+        <h1 id="hero-title">Where should<br><em>we eat?</em></h1>
+        <p>One city, endless choices. Let chance pick your next NYC restaurant.</p>
+        <button type="button" class="button tomato" id="surprise"><svg class="icon"><use href="#dice"/></svg>Surprise me</button>
+      </div>
+      <img class="hero-art" src="public/noodle-hero.webp" width="960" height="640" alt="Illustrated takeout carton with chopsticks lifting golden noodles">
+      <div class="checks" aria-hidden="true"></div>
+    </section>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+    <section id="preferences" class="panel" aria-labelledby="filters-title">
+      <div class="panel-heading">
+        <div class="title-line"><span class="tile"><svg class="icon"><use href="#sliders"/></svg></span><h2 id="filters-title">Fine-tune your pick</h2></div>
+        <button class="reset" id="reset" type="button"><svg class="icon"><use href="#reset-icon"/></svg>Reset</button>
+      </div>
+      <p class="intro">Choose what matters to you. Leave the rest up to luck.</p>
+      <form id="picker">
+        <div class="fields">
+          <label for="borough">Borough<span class="select-wrap"><svg class="icon"><use href="#pin"/></svg><select id="borough" name="borough"><option value="">Any borough</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
+          <label for="cuisine">Cuisine<span class="select-wrap"><svg class="icon"><use href="#utensils"/></svg><select id="cuisine" name="cuisine"><option value="">Any cuisine</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
+          <label for="price">Price range<span class="select-wrap"><svg class="icon"><use href="#wallet"/></svg><select id="price" name="price"><option value="">Any price</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
+        </div>
+        <div class="form-bottom">
+          <p id="matches" class="match-count" role="status"></p>
+          <button type="submit" class="button pine" id="pick"><svg class="icon"><use href="#shuffle"/></svg>Pick a restaurant</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="recent" id="recent" aria-labelledby="recent-title">
+      <div class="recent-heading"><svg class="icon"><use href="#history-icon"/></svg><h2 id="recent-title">Recent picks</h2></div>
+      <p class="empty-history" id="empty-history">Your picks will show up here as you explore.</p>
+      <ul id="history"></ul>
+    </section>
+    <noscript>Please enable JavaScript to pick a restaurant.</noscript>
+  </main>
+
+  <dialog id="result" aria-labelledby="result-name">
+    <div class="result-header"><span class="kicker"><svg class="icon"><use href="#dice"/></svg>Your pick</span><button class="close" id="close-result" type="button" aria-label="Close restaurant details"><svg class="icon"><use href="#close-icon"/></svg></button></div>
+    <div class="result-detail" aria-live="polite" aria-atomic="true">
+      <h2 id="result-name"></h2>
+      <div class="tags"><span id="result-cuisine"></span><span id="result-price"></span></div>
+      <p class="address"><svg class="icon"><use href="#pin"/></svg><span id="result-address"></span></p>
+    </div>
+    <div class="result-actions"><a id="maps" class="button pine" target="_blank" rel="noopener noreferrer">View on map</a><button class="button secondary" type="button" id="reroll"><svg class="icon"><use href="#shuffle"/></svg>Pick again</button></div>
+    <div class="checks" aria-hidden="true"></div>
+  </dialog>
+  <script src="public/picker-data.js"></script>
+  <script src="script.js"></script>
 </body>
-</html> 
+</html>

@@ -1,5 +1,6 @@
 "use client"; // This is a client component
 
+import type {} from '@react-three/fiber'
 import React from 'react'
 export default function Background() {
   return (
