@@ -43,6 +43,12 @@
       <div class="checks" aria-hidden="true"></div>
     </section>
 
+    <section class="spin-stage" aria-labelledby="spin-title">
+      <div class="spin-copy"><span class="spin-eyebrow">NO MORE “I DON’T KNOW”</span><h2 id="spin-title">Let the wheel<br><em>decide.</em></h2><p>Spin for a random restaurant from across the five boroughs, or filter first to make it your kind of night.</p></div>
+      <div class="wheel-area"><span class="wheel-pointer" aria-hidden="true"></span><canvas id="wheel" width="720" height="720" aria-label="Restaurant selection wheel"></canvas><button id="spin" class="spin-button" type="button" disabled><span>SPIN</span><small>THE CITY</small></button></div>
+      <p class="wheel-status" id="wheel-status" role="status">Loading the city’s restaurant list…</p>
+    </section>
+
     <section id="preferences" class="panel" aria-labelledby="filters-title">
       <div class="panel-heading">
         <div class="title-line"><span class="tile"><svg class="icon"><use href="#sliders"/></svg></span><h2 id="filters-title">Narrow it down</h2></div>
