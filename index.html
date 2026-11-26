@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#faf9f5">
-  <meta name="description" content="Let NYC Eats pick a restaurant across the five boroughs, or narrow the draw by borough, cuisine, and price.">
+  <meta name="description" content="Let NYC Eats pick a restaurant across the five boroughs using NYC Open Data.">
   <title>NYC Eats · Restaurant picker</title>
   <link rel="icon" href="public/dice.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -45,18 +45,18 @@
 
     <section id="preferences" class="panel" aria-labelledby="filters-title">
       <div class="panel-heading">
-        <div class="title-line"><span class="tile"><svg class="icon"><use href="#sliders"/></svg></span><h2 id="filters-title">Fine-tune your pick</h2></div>
+        <div class="title-line"><span class="tile"><svg class="icon"><use href="#sliders"/></svg></span><h2 id="filters-title">Narrow it down</h2></div>
         <button class="reset" id="reset" type="button"><svg class="icon"><use href="#reset-icon"/></svg>Reset</button>
       </div>
-      <p class="intro">Choose what matters to you. Leave the rest up to luck.</p>
+      <p class="intro">Filter by borough or cuisine, or leave both open for a citywide pick.</p>
       <form id="picker">
         <div class="fields">
           <label for="borough">Borough<span class="select-wrap"><svg class="icon"><use href="#pin"/></svg><select id="borough" name="borough"><option value="">Any borough</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
           <label for="cuisine">Cuisine<span class="select-wrap"><svg class="icon"><use href="#utensils"/></svg><select id="cuisine" name="cuisine"><option value="">Any cuisine</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
-          <label for="price">Price range<span class="select-wrap"><svg class="icon"><use href="#wallet"/></svg><select id="price" name="price"><option value="">Any price</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
+          
         </div>
         <div class="form-bottom">
-          <p id="matches" class="match-count" role="status"></p>
+          <p id="matches" class="match-count" role="status">Loading NYC restaurant data…</p>
           <button type="submit" class="button pine" id="pick"><svg class="icon"><use href="#shuffle"/></svg>Pick a restaurant</button>
         </div>
       </form>
@@ -64,7 +64,7 @@
 
     <section class="recent" id="recent" aria-labelledby="recent-title">
       <div class="recent-heading"><svg class="icon"><use href="#history-icon"/></svg><h2 id="recent-title">Recent picks</h2></div>
-      <p class="empty-history" id="empty-history">Your picks will show up here as you explore.</p>
+      <p class="empty-history" id="empty-history">Your picks will show up here as you explore.</p><p class="data-note">Live list from <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j" target="_blank" rel="noopener noreferrer">NYC Open Data</a>. Cuisine labels and active status follow the city inspection dataset.</p>
       <ul id="history"></ul>
     </section>
     <noscript>Please enable JavaScript to pick a restaurant.</noscript>
@@ -74,7 +74,7 @@
     <div class="result-header"><span class="kicker"><svg class="icon"><use href="#dice"/></svg>Your pick</span><button class="close" id="close-result" type="button" aria-label="Close restaurant details"><svg class="icon"><use href="#close-icon"/></svg></button></div>
     <div class="result-detail" aria-live="polite" aria-atomic="true">
       <h2 id="result-name"></h2>
-      <div class="tags"><span id="result-cuisine"></span><span id="result-price"></span></div>
+      <div class="tags"><span id="result-cuisine"></span><span id="result-borough"></span></div>
       <p class="address"><svg class="icon"><use href="#pin"/></svg><span id="result-address"></span></p>
     </div>
     <div class="result-actions"><a id="maps" class="button pine" target="_blank" rel="noopener noreferrer">View on map</a><button class="button secondary" type="button" id="reroll"><svg class="icon"><use href="#shuffle"/></svg>Pick again</button></div>
