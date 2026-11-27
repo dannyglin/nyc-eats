@@ -26,7 +26,9 @@ export default function Home({ title, markup }: InferGetStaticPropsType<typeof g
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Find your next NYC restaurant with a random pick across the five boroughs, or filter by borough, cuisine, and price." />
+        <meta name="description" content="Spin the Meal Machine to pick your next NYC restaurant." />
+        <meta name="theme-color" content="#fcf7e8" />
+        <link rel="icon" href={`${basePath}/arcade-food/burger.png`} type="image/png" />
       </Head>
       <div dangerouslySetInnerHTML={{ __html: markup.replace(/(src|href)="(?:\.\/)?public\//g, `$1="${basePath}/`) }} />
     </>

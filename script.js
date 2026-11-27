@@ -1,166 +1,135 @@
 (() => {
-  const form = document.getElementById('picker');
-  const fields = { borough: document.getElementById('borough'), cuisine: document.getElementById('cuisine') };
-  const dialog = document.getElementById('result');
+  const byId = id => document.getElementById(id);
+  const machine = byId('machine');
+  const spinButton = byId('spin');
+  const filters = [byId('borough'), byId('cuisine')];
+  const strips = [...machine.querySelectorAll('.strip')];
+  const result = byId('result');
+  const recent = byId('recent');
+  const foods = ['pizza', 'burger', 'ramen', 'taco', 'sushi', 'fries'];
+  const artRoot = new URL('.', strips[0].querySelector('img').src);
   const history = [];
   let catalog;
-  let current = null;
-  let loading = true;
+  let pool = [];
+  let current;
   let spinning = false;
-  let wheelRotation = 0;
-  let wheelEntries = [];
 
-  function updateCount() {
-    if (loading || !catalog) return;
-    const count = matching().length;
-    document.getElementById('matches').textContent = `${count.toLocaleString()} ${count === 1 ? 'restaurant matches' : 'restaurants match'} your picks`;
-    document.getElementById('pick').disabled = count === 0;
-    document.getElementById('surprise').disabled = catalog.restaurants.length === 0;
-    document.getElementById('spin').disabled = spinning || count === 0;
-    document.getElementById('wheel-status').textContent = `${count.toLocaleString()} restaurants in this spin`;
+  function updateControls() {
+    pool = catalog.matches({ borough: filters[0].value, cuisine: filters[1].value });
+    const count = pool.length;
+    spinButton.disabled = spinning || !count;
+    filters.forEach(select => { select.disabled = spinning; });
+    byId('machine-status').textContent = spinning ? 'Spinning…' : count ? 'Ready to spin' : 'No matches';
+    byId('spin-label').textContent = spinning ? 'Spinning' : 'Spin to pick';
+    byId('feed-text').textContent = count ? '' : 'Try a different borough or cuisine.';
+    byId('feed-message').hidden = !!count;
   }
 
-  const filters = () => Object.fromEntries(Object.entries(fields).map(([key, select]) => [key, select.value]));
-  const matching = () => catalog.matches(filters());
-
-  function choose(pool = matching(), selected = null) {
-    if (!pool.length) return;
-    current = selected || catalog.pick(pool, current);
-    document.getElementById('result-name').textContent = current.name;
-    document.getElementById('result-cuisine').textContent = current.cuisine;
-    document.getElementById('result-borough').textContent = current.borough;
-    document.getElementById('result-address').textContent = current.address || 'Address not listed';
-    document.getElementById('maps').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${current.name}, ${current.address}, ${current.borough}, New York`)}`;
-    history.unshift(current);
-    history.splice(6);
-    renderHistory();
-    if (!dialog.open) dialog.showModal();
+  function tile(food) {
+    const item = document.createElement('div');
+    item.className = 'tile';
+    const image = new Image();
+    image.src = new URL(food + '.png', artRoot);
+    image.alt = '';
+    const label = document.createElement('span');
+    label.textContent = food;
+    item.append(image, label);
+    return item;
   }
 
-  function renderHistory() {
-    const list = document.getElementById('history');
-    list.replaceChildren(...history.map(restaurant => {
-      const item = document.createElement('li');
-      const name = document.createElement('span');
-      const details = document.createElement('small');
-      name.textContent = restaurant.name;
-      details.textContent = `${restaurant.cuisine} · ${restaurant.borough}`;
-      item.append(name, details);
-      return item;
-    }));
-    document.getElementById('empty-history').hidden = history.length > 0;
+  function randomFood() {
+    return foods[Math.floor(Math.random() * foods.length)];
   }
 
-  function populateFilters() {
-    for (const key of Object.keys(fields)) {
-      for (const value of catalog.options[key]) {
-        const option = document.createElement('option');
-        option.value = value;
-        option.textContent = value;
-        fields[key].append(option);
-      }
+  async function roll(strip, index, lastFood) {
+    const last = tile(lastFood);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !strip.animate) {
+      strip.replaceChildren(last);
+      return;
     }
-  }
-
-  function showError(error) {
-    loading = false;
-    document.getElementById('matches').textContent = 'Restaurant data is temporarily unavailable. Please try again.';
-    document.getElementById('result-name').textContent = 'Couldn’t load restaurants';
-    console.error('NYC restaurant data could not be loaded:', error);
-    document.getElementById('pick').disabled = true;
-    document.getElementById('spin').disabled = true;
-    document.getElementById('surprise').disabled = true;
-  }
-
-  async function start() {
+    const steps = 10 + index * 3;
+    for (let step = 1; step < steps; step++) strip.append(tile(randomFood()));
+    strip.append(last);
+    const motion = strip.animate(
+      [{ transform: 'translateY(0)' }, { transform: 'translateY(-' + steps * 100 + '%)' }],
+      { duration: 1050 + index * 270, easing: 'cubic-bezier(.18,.55,.24,1)', fill: 'forwards' }
+    );
     try {
-      const restaurants = await window.NycEatsData.loadRestaurants();
-      catalog = window.NycEatsData.createCatalog(restaurants);
-      loading = false;
-      populateFilters();
-      updateCount();
-      drawWheel(catalog.restaurants.slice(0, 8));
-    } catch (error) {
-      showError(error);
+      await motion.finished;
+    } finally {
+      strip.replaceChildren(last);
+      motion.cancel();
     }
   }
 
-  function drawWheel(entries) {
-    wheelEntries = entries;
-    const canvas = document.getElementById('wheel');
-    const context = canvas.getContext('2d');
-    const center = canvas.width / 2;
-    const radius = center - 12;
-    const colors = ['#f04d38', '#e8ff6a', '#f6a9ca', '#8b72e8', '#f7c54c', '#66d6bd', '#fd855f', '#b8a6ff'];
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.save();
-    context.translate(center, center);
-    entries.forEach((restaurant, index) => {
-      const segment = Math.PI * 2 / entries.length;
-      const start = -Math.PI / 2 + index * segment;
-      context.beginPath();
-      context.moveTo(0, 0);
-      context.arc(0, 0, radius, start, start + segment);
-      context.closePath();
-      context.fillStyle = colors[index % colors.length];
-      context.fill();
-      context.strokeStyle = '#211a35';
-      context.lineWidth = 5;
-      context.stroke();
-      context.save();
-      context.rotate(start + segment / 2);
-      context.translate(radius * .67, 0);
-      context.rotate(Math.PI / 2);
-      context.fillStyle = '#211a35';
-      context.font = '700 17px Arial';
-      context.textAlign = 'center';
-      context.fillText(restaurant.name.length > 21 ? `${restaurant.name.slice(0, 19)}…` : restaurant.name, 0, 0, 175);
-      context.restore();
-    });
-    context.beginPath();
-    context.arc(0, 0, 42, 0, Math.PI * 2);
-    context.fillStyle = '#211a35';
-    context.fill();
-    context.restore();
+  function showPick(restaurant, prize) {
+    current = restaurant;
+    byId('result-name').textContent = restaurant.name;
+    byId('result-details').textContent = restaurant.cuisine + ' · ' + restaurant.borough;
+    byId('result-address').textContent = restaurant.address || 'Address not listed';
+    byId('prize').src = new URL(prize + '.png', artRoot);
+    const query = [restaurant.name, restaurant.address, restaurant.borough, 'New York'].filter(Boolean).join(', ');
+    byId('maps').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
+    const entry = document.createElement('li');
+    const name = document.createElement('strong');
+    const detail = document.createElement('small');
+    name.textContent = restaurant.name;
+    detail.textContent = byId('result-details').textContent;
+    entry.append(name, detail);
+    history.unshift(entry);
+    history.splice(6);
+    byId('history').replaceChildren(...history);
+    byId('empty-history').hidden = true;
+    result.showModal();
   }
 
-  function spin(pool) {
+  async function spin() {
     if (!pool.length || spinning) return;
-    const selected = catalog.pick(pool, current);
-    const candidates = pool.filter(restaurant => restaurant.id !== selected.id);
-    for (let index = candidates.length - 1; index > 0; index -= 1) {
-      const swapIndex = Math.floor(Math.random() * (index + 1));
-      [candidates[index], candidates[swapIndex]] = [candidates[swapIndex], candidates[index]];
-    }
-    wheelEntries = [selected, ...candidates.slice(0, 7)];
-    const winnerIndex = Math.floor(Math.random() * wheelEntries.length);
-    [wheelEntries[0], wheelEntries[winnerIndex]] = [wheelEntries[winnerIndex], wheelEntries[0]];
-    const segment = 360 / wheelEntries.length;
-    const stopAngle = (360 - (winnerIndex * segment + segment / 2)) % 360;
-    const currentAngle = wheelRotation % 360;
-    wheelRotation += 360 * 6 + ((stopAngle - currentAngle + 360) % 360);
+    const pick = catalog.pick(pool, current);
+    const prizes = foods.filter(food => pick.cuisine.toLowerCase().includes(food));
+    const prize = prizes[0] || randomFood();
     spinning = true;
-    document.getElementById('spin').disabled = true;
-    document.getElementById('pick').disabled = true;
-    document.getElementById('surprise').disabled = true;
-    document.getElementById('wheel-status').textContent = 'The city is choosing…';
-    drawWheel(wheelEntries);
-    const canvas = document.getElementById('wheel');
-    canvas.style.transform = `rotate(${wheelRotation}deg)`;
-    canvas.addEventListener('transitionend', () => {
+    machine.classList.add('spinning');
+    byId('open-history').disabled = true;
+    updateControls();
+    try {
+      await Promise.all(strips.map((strip, index) => roll(strip, index, prize)));
+    } finally {
       spinning = false;
-      updateCount();
-      choose(pool, selected);
-    }, { once: true });
+      machine.classList.remove('spinning');
+      byId('open-history').disabled = false;
+      updateControls();
+      showPick(pick, prize);
+    }
   }
 
-  Object.values(fields).forEach(select => select.addEventListener('change', () => { updateCount(); if (catalog) drawWheel(matching().slice(0, 8)); }));
-  form.addEventListener('submit', event => { event.preventDefault(); if (catalog) spin(matching()); });
-  document.getElementById('surprise').addEventListener('click', () => { if (catalog) spin(catalog.restaurants); });
-  document.getElementById('spin').addEventListener('click', () => { if (catalog) spin(matching()); });
-  document.getElementById('reroll').addEventListener('click', () => { if (catalog) { dialog.close(); spin(matching()); } });
-  document.getElementById('close-result').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-  document.getElementById('reset').addEventListener('click', () => { form.reset(); updateCount(); });
-  start();
+  async function load() {
+    byId('retry').hidden = true;
+    byId('feed-message').hidden = true;
+    byId('machine-status').textContent = 'Loading restaurants';
+    try {
+      catalog = window.NycEatsData.createCatalog(await window.NycEatsData.loadRestaurants());
+      for (const select of filters) {
+        for (const option of catalog.options[select.id]) select.add(new Option(option, option));
+      }
+      updateControls();
+    } catch {
+      byId('machine-status').textContent = 'Feed offline';
+      byId('feed-text').textContent = 'Couldn’t load the restaurant list.';
+      byId('feed-message').hidden = false;
+      byId('retry').hidden = false;
+    }
+  }
+
+  filters.forEach(select => select.addEventListener('change', updateControls));
+  spinButton.addEventListener('click', spin);
+  byId('retry').addEventListener('click', load);
+  byId('open-history').addEventListener('click', () => recent.showModal());
+  for (const modal of [result, recent]) {
+    modal.querySelector('.close').addEventListener('click', () => modal.close());
+    modal.addEventListener('click', event => { if (event.target === modal) modal.close(); });
+  }
+  result.addEventListener('close', () => { if (!spinning) spinButton.focus(); });
+  byId('reroll').addEventListener('click', () => { result.close(); spin(); });
+  load();
 })();

@@ -3,88 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf9f5">
-  <meta name="description" content="Let NYC Eats pick a restaurant across the five boroughs using NYC Open Data.">
-  <title>NYC Eats · Restaurant picker</title>
-  <link rel="icon" href="public/dice.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#fcf7e8">
+  <meta name="description" content="Spin the Meal Machine to pick your next NYC restaurant.">
+  <title>NYC Eats · Meal Machine</title>
+  <link rel="icon" href="public/arcade-food/burger.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01" stroke-width="3.4"/></symbol>
-    <symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-    <symbol id="sliders" viewBox="0 0 24 24"><path d="M3 7h4m5 0h9M3 17h10m5 0h3"/><circle cx="9.5" cy="7" r="2.5"/><circle cx="15.5" cy="17" r="2.5"/></symbol>
-    <symbol id="history-icon" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2.5 7M3 5v6h6m3-5v6l3.5 2"/></symbol>
-    <symbol id="reset-icon" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 7M3 4v6h6"/></symbol>
-    <symbol id="chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
-    <symbol id="utensils" viewBox="0 0 24 24"><path d="M5 3v5a3 3 0 0 0 6 0V3M8 3v18m11 0V3c-3 2-4 5-4 10h4"/></symbol>
-    <symbol id="wallet" viewBox="0 0 24 24"><path d="M20 8V6a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15v11H5a2 2 0 0 1-2-2V7"/><path d="M20 12h-4a2 2 0 1 0 0 4h4"/></symbol>
-    <symbol id="shuffle" viewBox="0 0 24 24"><path d="M3 6h2c5 0 7 12 12 12h4m-4-4 4 4-4 4M3 18h2c2.5 0 4-2.5 5.5-5m3-5C15 6 16 6 18 6h3m-4-4 4 4-4 4"/></symbol>
-    <symbol id="close-icon" viewBox="0 0 24 24"><path d="m6 6 12 12m0-12L6 18"/></symbol>
+  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="clock" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 7M3 5v6h6m3-4v6l3 2"/></symbol>
+    <symbol id="spin-icon" viewBox="0 0 24 24"><path d="M4 10a8 8 0 0 1 14-4l2 2M20 3v5h-5M20 14a8 8 0 0 1-14 4l-2-2m5 0H4v5"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+    <symbol id="fork" viewBox="0 0 24 24"><path d="M4 3v6a3 3 0 0 0 6 0V3M7 3v18m11 0V3c-3 2-4 5-4 10h4"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12m0-12L6 18"/></symbol>
   </svg>
   <header class="masthead">
-    <div class="wrap topbar">
-      <a class="brand" href="#top" aria-label="NYC Eats home"><span class="brand-die"><i></i></span>NYC<span class="brand-accent">Eats</span></a>
-      <nav aria-label="Main navigation">
-        <a class="history-link" href="#recent"><svg class="icon"><use href="#history-icon"/></svg>Recent picks</a>
-        <span class="city"><svg class="icon"><use href="#pin"/></svg>New York City</span>
-      </nav>
-    </div>
+    <div class="brand"><img src="public/arcade-food/burger.png" alt=""><span>NYC <b>EATS</b></span></div>
+    <button type="button" class="history-button" id="open-history"><svg class="icon" aria-hidden="true"><use href="#clock"/></svg>Recent picks</button>
   </header>
-  <main class="wrap" id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="kicker"><span class="kicker-line"></span>Restaurant roulette</div>
-        <h1 id="hero-title">Where should<br><em>we eat?</em></h1>
-        <p>One city, endless choices. Let chance pick your next NYC restaurant.</p>
-        <button type="button" class="button tomato" id="surprise"><svg class="icon"><use href="#dice"/></svg>Surprise me</button>
-      </div>
-      <div class="borough-stamp" aria-hidden="true"><span>GOOD<br>FOOD<br>NEAR<br>YOU</span><b>NYC</b></div>
-      <div class="checks" aria-hidden="true"></div>
-    </section>
-
-    <section class="spin-stage" aria-labelledby="spin-title">
-      <div class="spin-copy"><span class="spin-eyebrow">NO MORE “I DON’T KNOW”</span><h2 id="spin-title">Let the wheel<br><em>decide.</em></h2><p>Spin for a random restaurant from across the five boroughs, or filter first to make it your kind of night.</p></div>
-      <div class="wheel-area"><span class="wheel-pointer" aria-hidden="true"></span><canvas id="wheel" width="720" height="720" aria-label="Restaurant selection wheel"></canvas><button id="spin" class="spin-button" type="button" disabled><span>SPIN</span><small>THE CITY</small></button></div>
-      <p class="wheel-status" id="wheel-status" role="status">Loading the city’s restaurant list…</p>
-    </section>
-
-    <section id="preferences" class="panel" aria-labelledby="filters-title">
-      <div class="panel-heading">
-        <div class="title-line"><span class="tile"><svg class="icon"><use href="#sliders"/></svg></span><h2 id="filters-title">Narrow it down</h2></div>
-        <button class="reset" id="reset" type="button"><svg class="icon"><use href="#reset-icon"/></svg>Reset</button>
-      </div>
-      <p class="intro">Filter by borough or cuisine, or leave both open for a citywide pick.</p>
-      <form id="picker">
-        <div class="fields">
-          <label for="borough">Borough<span class="select-wrap"><svg class="icon"><use href="#pin"/></svg><select id="borough" name="borough"><option value="">Any borough</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
-          <label for="cuisine">Cuisine<span class="select-wrap"><svg class="icon"><use href="#utensils"/></svg><select id="cuisine" name="cuisine"><option value="">Any cuisine</option></select><svg class="icon down"><use href="#chevron"/></svg></span></label>
-          
+  <main class="stage">
+    <img class="city-scene" src="public/arcade-city.png" alt="">
+    <div class="game">
+      <section class="cabinet" id="machine" aria-labelledby="game-title">
+        <div class="marquee">
+          <div class="marquee-face">
+            <i class="spark" aria-hidden="true"></i>
+            <h1 id="game-title">Meal Machine</h1>
+            <i class="spark" aria-hidden="true"></i>
+          </div>
         </div>
-        <div class="form-bottom">
-          <p id="matches" class="match-count" role="status">Loading NYC restaurant data…</p>
-          <button type="submit" class="button pine" id="pick"><svg class="icon"><use href="#shuffle"/></svg>Pick a restaurant</button>
+        <div class="machine-body">
+          <div class="bezel">
+            <div class="display-heading"><span class="grille"></span><span id="machine-status" role="status">Loading</span><span class="grille"></span></div>
+            <div class="reels" aria-hidden="true">
+              <div class="reel"><div class="strip"><div class="tile"><img src="public/arcade-food/pizza.png" alt=""><span>Pizza</span></div></div></div>
+              <div class="reel"><div class="strip"><div class="tile"><img src="public/arcade-food/burger.png" alt=""><span>Burger</span></div></div></div>
+              <div class="reel"><div class="strip"><div class="tile"><img src="public/arcade-food/ramen.png" alt=""><span>Ramen</span></div></div></div>
+            </div>
+          </div>
+          <div class="deck">
+            <span class="speaker" aria-hidden="true"></span>
+            <button type="button" class="spin-button" id="spin" disabled><svg class="icon" aria-hidden="true"><use href="#spin-icon"/></svg><span id="spin-label">Spin to pick</span></button>
+            <span class="speaker" aria-hidden="true"></span>
+          </div>
         </div>
-      </form>
-    </section>
-
-    <section class="recent" id="recent" aria-labelledby="recent-title">
-      <div class="recent-heading"><svg class="icon"><use href="#history-icon"/></svg><h2 id="recent-title">Recent picks</h2></div>
-      <p class="empty-history" id="empty-history">Your picks will show up here as you explore.</p><p class="data-note">Live list from <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j" target="_blank" rel="noopener noreferrer">NYC Open Data</a>. Cuisine labels and active status follow the city inspection dataset.</p>
-      <ul id="history"></ul>
-    </section>
-    <noscript>Please enable JavaScript to pick a restaurant.</noscript>
-  </main>
-
-  <dialog id="result" aria-labelledby="result-name">
-    <div class="result-header"><span class="kicker"><svg class="icon"><use href="#dice"/></svg>Your pick</span><button class="close" id="close-result" type="button" aria-label="Close restaurant details"><svg class="icon"><use href="#close-icon"/></svg></button></div>
-    <div class="result-detail" aria-live="polite" aria-atomic="true">
-      <h2 id="result-name"></h2>
-      <div class="tags"><span id="result-cuisine"></span><span id="result-borough"></span></div>
-      <p class="address"><svg class="icon"><use href="#pin"/></svg><span id="result-address"></span></p>
+        <div class="lever" aria-hidden="true"><i></i></div>
+      </section>
+      <div class="filter-bar" role="group" aria-label="Restaurant filters">
+        <label><svg class="icon" aria-hidden="true"><use href="#pin"/></svg><span class="visually-hidden">Borough</span><select id="borough" disabled><option value="">All boroughs</option></select></label>
+        <label><svg class="icon" aria-hidden="true"><use href="#fork"/></svg><span class="visually-hidden">Cuisine</span><select id="cuisine" disabled><option value="">All cuisines</option></select></label>
+      </div>
+      <p class="feed-message" id="feed-message" hidden><span id="feed-text"></span> <button type="button" id="retry" hidden>Try again</button></p>
+      <noscript>Enable JavaScript to spin the Meal Machine.</noscript>
     </div>
-    <div class="result-actions"><a id="maps" class="button pine" target="_blank" rel="noopener noreferrer">View on map</a><button class="button secondary" type="button" id="reroll"><svg class="icon"><use href="#shuffle"/></svg>Pick again</button></div>
-    <div class="checks" aria-hidden="true"></div>
+  </main>
+  <footer><span class="location"><svg class="icon" aria-hidden="true"><use href="#pin"/></svg>New York City</span><a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j" target="_blank" rel="noopener noreferrer">NYC Open Data <span aria-hidden="true">↗</span></a></footer>
+  <dialog id="result" aria-labelledby="result-name">
+    <div class="dialog-top"><span>Your restaurant</span><button type="button" aria-label="Close restaurant details" class="close"><svg class="icon" aria-hidden="true"><use href="#close"/></svg></button></div>
+    <div class="dialog-content"><img class="prize" id="prize" alt=""><h2 id="result-name"></h2><p id="result-details"></p><p class="address"><svg class="icon" aria-hidden="true"><use href="#pin"/></svg><span id="result-address"></span></p>
+    <div class="actions"><a id="maps" class="primary" target="_blank" rel="noopener noreferrer">View on map ↗</a><button type="button" id="reroll">Spin again</button></div></div>
+  </dialog>
+  <dialog id="recent" aria-labelledby="recent-title">
+    <div class="dialog-top"><h2 id="recent-title">Recent picks</h2><button type="button" aria-label="Close recent picks" class="close"><svg class="icon" aria-hidden="true"><use href="#close"/></svg></button></div>
+    <div class="dialog-content"><p id="empty-history">Spin the machine to make your first pick.</p><ol id="history"></ol></div>
   </dialog>
   <script src="public/picker-data.js"></script>
   <script src="script.js"></script>
