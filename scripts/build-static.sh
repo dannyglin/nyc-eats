@@ -2,7 +2,7 @@
 set -eu
 cd "$(dirname "$0")/.."
 
-set -- index.html styles.css script.js public/picker-data.js public/arcade-city.png \
+set -- index.html styles.css script.js public/picker-data.js public/arcade-city.png public/meal-machine.svg \
   public/fonts/arcade-display.woff public/arcade-food/*.png
 
 for asset do
